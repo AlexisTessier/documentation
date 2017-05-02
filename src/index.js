@@ -42,10 +42,7 @@ function pipeline(fns) {
   };
 }
 
-function configure(
-  indexes: Array<string>,
-  args: Object
-): Promise<InputsConfig> {
+function configure(indexes, args) {
   let mergedConfig = mergeConfig(args);
 
   return mergedConfig.then(config => {
@@ -68,10 +65,7 @@ function configure(
  * @param {Object} config options
  * @returns {Promise<Array<string>>} promise with results
  */
-function expandInputs(
-  indexes: string | Array<string>,
-  config: DocumentationConfig
-) {
+function expandInputs(indexes, config) {
   // Ensure that indexes is an array of strings
   indexes = [].concat(indexes);
 
@@ -185,8 +179,7 @@ function lintInternal(inputsAndConfig) {
  *   }
  * });
  */
-let lint = (indexes: Array<string | Object>, args) =>
-  configure(indexes, args).then(lintInternal);
+let lint = (indexes, args) => configure(indexes, args).then(lintInternal);
 
 /**
  * Generate JavaScript documentation as a list of parsed JSDoc
@@ -229,8 +222,7 @@ let lint = (indexes: Array<string | Object>, args) =>
  *   // any other kind of code data.
  * });
  */
-let build = (indexes: Array<string | Object>, args: Object) =>
-  configure(indexes, args).then(buildInternal);
+let build = (indexes, args) => configure(indexes, args).then(buildInternal);
 
 /**
  * Documentation's formats are modular methods that take comments
@@ -242,7 +234,7 @@ let build = (indexes: Array<string | Object>, args: Object) =>
 var formats = {
   html: require('./output/html'),
   md: require('./output/markdown'),
-  remark: (comments: Array<Comment>, config: DocumentationConfig) =>
+  remark: (comments, config) =>
     markdownAST(comments, config).then(res => JSON.stringify(res, null, 2)),
   json: require('./output/json')
 };

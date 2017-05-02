@@ -1,5 +1,3 @@
-'use strict';
-
 var flowDoctrine = require('../../src/flow_doctrine.js'),
   parse = require('../../src/parsers/javascript'),
   FLOW_TYPES = require('babel-types').FLOW_TYPES;

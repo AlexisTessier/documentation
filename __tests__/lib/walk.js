@@ -1,5 +1,3 @@
-'use strict';
-
 var walk = require('../../src/walk');
 
 test('walk', function() {

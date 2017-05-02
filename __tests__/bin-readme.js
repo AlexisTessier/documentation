@@ -1,4 +1,3 @@
-'use strict';
 var path = require('path'),
   os = require('os'),
   exec = require('child_process').exec,
@@ -55,20 +54,10 @@ describe('readme command', function() {
     });
   });
 
-  var expectedFile = path.join(fixtures, 'README.output.md');
-  var expectedPath = path.join(fixtures, 'README.output.md');
-  var expected = fs.readFileSync(expectedFile, 'utf-8');
-
   test('updates README.md', function() {
     return documentation(['readme index.js -s API'], { cwd: d }).then(() => {
       var outputPath = path.join(d, 'README.md');
-
-      if (UPDATE) {
-        fs.writeFileSync(expectedPath, fs.readFileSync(outputPath, 'utf-8'));
-      }
-
-      var actual = fs.readFileSync(outputPath, 'utf-8');
-      expect(actual).toEqual(expected);
+      expect(fs.readFileSync(outputPath, 'utf-8')).toMatchSnapshot();
     });
   });
 
@@ -80,12 +69,8 @@ describe('readme command', function() {
     return documentation(['readme index.js -s API --readme-file other.md'], {
       cwd: d
     }).then(() => {
-      var actualPath = path.join(d, 'other.md');
-      if (UPDATE) {
-        fs.writeFileSync(actualPath, expected);
-      }
-      var actual = fs.readFileSync(actualPath, 'utf-8');
-      expect(actual).toEqual(expected);
+      var actual = fs.readFileSync(path.join(d, 'other.md'), 'utf8');
+      expect(actual).toMatchSnapshot();
     });
   });
 
@@ -119,7 +104,7 @@ describe('readme command', function() {
     return documentation(['readme index.js'], { cwd: d }).catch(err => {
       expect(err).toBeTruthy();
       expect(err.code !== 0).toBeTruthy();
-      expect(stderr.match(/Missing required argument/)).toBeTruthy();
+      expect(err.stderr.match(/Missing required argument/)).toBeTruthy();
     });
   });
 

@@ -87,7 +87,7 @@ class Server extends EventEmitter {
   }
 
   // prettier-ignore
-  start():  Promise<Server>  {
+  start(): Promise<Server>  {
     /*
      * Boot up the server's HTTP & LiveReload endpoints. This method
      * can be called multiple times.
@@ -116,7 +116,7 @@ class Server extends EventEmitter {
   }
 
   // prettier-ignore
-  stop():  Promise<Server>  {
+  stop(): Promise<Server>  {
     /*
      * Shut down the server's HTTP & LiveReload endpoints. This method
      * can be called multiple times.

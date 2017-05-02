@@ -1,4 +1,3 @@
-'use strict';
 var formatters = require('../../../../src/output/util/formatters')(getHref);
 
 test('formatters.parameters -- long form', function() {

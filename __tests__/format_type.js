@@ -1,5 +1,4 @@
 /*eslint max-len: 0 */
-'use strict';
 
 var _formatType = require('../src/output/util/format_type'),
   LinkerStack = require('../src/output/util/linker_stack'),

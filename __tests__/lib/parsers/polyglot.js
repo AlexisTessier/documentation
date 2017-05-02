@@ -1,5 +1,3 @@
-'use strict';
-
 var fs = require('fs'),
   path = require('path'),
   remark = require('remark'),

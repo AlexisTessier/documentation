@@ -1,5 +1,3 @@
-'use strict';
-
 var remark = require('remark'),
   parse = require('../../../src/parsers/javascript');
 

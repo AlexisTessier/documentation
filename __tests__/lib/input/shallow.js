@@ -1,5 +1,3 @@
-'use strict';
-
 var path = require('path'), shallow = require('../../../src/input/shallow');
 
 test('shallow deps', function() {

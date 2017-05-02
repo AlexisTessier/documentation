@@ -1,5 +1,3 @@
-'use strict';
-
 var parse = require('../../../src/parsers/javascript'),
   inferName = require('../../../src/infer/name'),
   inferAccess = require('../../../src/infer/access');

@@ -1,5 +1,3 @@
-'use strict';
-
 /* eslint no-unused-vars: 0 */
 
 var mock = require('mock-fs'),

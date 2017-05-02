@@ -1,5 +1,3 @@
-'use strict';
-
 var nestTag = require('../../src/nest').nestTag;
 
 // Print a tree of tags in a way that's easy to test.

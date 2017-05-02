@@ -1,5 +1,3 @@
-'use strict';
-
 var parse = require('../../src/parsers/javascript'),
   lintComments = require('../../src/lint').lintComments,
   formatLint = require('../../src/lint').formatLint;

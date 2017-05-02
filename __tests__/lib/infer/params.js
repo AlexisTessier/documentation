@@ -1,5 +1,3 @@
-'use strict';
-
 var parse = require('../../../src/parsers/javascript'),
   inferParams = require('../../../src/infer/params');
 

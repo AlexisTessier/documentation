@@ -1,5 +1,3 @@
-'use strict';
-
 var get = require('../utils').get;
 var File = require('vinyl');
 var getPort = require('get-port');

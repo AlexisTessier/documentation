@@ -1,5 +1,3 @@
-'use strict';
-
 var documentationSchema = require('documentation-schema'),
   validate = require('json-schema'),
   documentation = require('../'),

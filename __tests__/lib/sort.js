@@ -1,5 +1,3 @@
-'use strict';
-
 var sort = require('../../src/sort'), path = require('path');
 
 test('sort stream alphanumeric', function() {

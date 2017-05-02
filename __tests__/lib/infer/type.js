@@ -1,5 +1,3 @@
-'use strict';
-
 var parse = require('../../../src/parsers/javascript'),
   inferKind = require('../../../src/infer/kind'),
   inferType = require('../../../src/infer/type');

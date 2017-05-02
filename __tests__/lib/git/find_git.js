@@ -1,5 +1,3 @@
-'use strict';
-
 var mock = require('mock-fs');
 var mockRepo = require('../../utils').mockRepo;
 var path = require('path');

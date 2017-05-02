@@ -1,4 +1,3 @@
-'use strict';
 var http = require('http');
 import { walk } from '../src/walk';
 var concat = require('concat-stream');

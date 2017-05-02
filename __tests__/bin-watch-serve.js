@@ -1,5 +1,3 @@
-'use strict';
-
 var path = require('path');
 var os = require('os');
 var get = require('./utils').get;

@@ -2,8 +2,6 @@
 
 /* eslint no-console: 0 */
 
-'use strict';
-
 var yargs = require('yargs');
 var commands = require('../lib/commands');
 

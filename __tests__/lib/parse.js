@@ -1,5 +1,3 @@
-'use strict';
-
 var parse = require('../../src/parsers/javascript'),
   remark = require('remark'),
   visit = require('unist-util-visit');

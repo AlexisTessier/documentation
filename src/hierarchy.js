@@ -27,12 +27,12 @@ let getMembers = () => ({
  * @returns reduced comment
  * @private
  */
-function pick(comment: Comment): ?ReducedComment {
+function pick(comment) {
   if (typeof comment.name !== 'string') {
     return undefined;
   }
 
-  var item: ReducedComment = {
+  var item = {
     name: comment.name,
     kind: comment.kind
   };
@@ -49,7 +49,7 @@ function pick(comment: Comment): ?ReducedComment {
  * @returns {Array<Object>} nested comments, with only root comments
  * at the top level.
  */
-module.exports = function(comments: Array<Comment>) {
+module.exports = function(comments) {
   var id = 0,
     root = {
       members: getMembers()

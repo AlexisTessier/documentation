@@ -8,7 +8,6 @@ require('./polyglot/blend.cpp');
  * I am in `external.input.js`.
  */
 function foo() {
-  'use strict';
   return 'bar';
 }
 

@@ -1,4 +1,4 @@
-'use strict';
+/* global jasmine */
 
 var path = require('path'),
   os = require('os'),

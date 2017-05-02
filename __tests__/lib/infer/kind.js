@@ -1,4 +1,3 @@
-'use strict';
 /*eslint-disable no-unused-vars*/
 var inferKind = require('../../../src/infer/kind'),
   parse = require('../../../src/parsers/javascript');

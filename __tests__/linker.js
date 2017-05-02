@@ -1,4 +1,3 @@
-'use strict';
 var LinkerStack = require('../src/output/util/linker_stack');
 
 test('linkerStack', function() {

@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Creates a new Klass
  * @extends Stream.Writable

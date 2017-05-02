@@ -1,7 +1,5 @@
 // @flow
 
-'use strict';
-
 /** x */
 let x: T => string;
 
