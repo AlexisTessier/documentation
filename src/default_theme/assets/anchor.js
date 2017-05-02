@@ -5,7 +5,6 @@
  */
 
 function AnchorJS(options) {
-  'use strict';
   this.options = options || {};
 
   this._applyRemainingDefaultOptions = function(opts) {

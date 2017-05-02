@@ -2,7 +2,7 @@
   "root": true,
   "parser": "babel-eslint",
   "parserOptions": {
-    "sourceType": "script"
+    "sourceType": "module"
   },
   "plugins": [
     "flowtype"

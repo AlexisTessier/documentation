@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 var errorPage = require('../serve/error_page'),
   fs = require('fs'),
@@ -8,6 +7,7 @@ var errorPage = require('../serve/error_page'),
   sharedOptions = require('./shared_options'),
   Server = require('../serve/server'),
   _ = require('lodash'),
+  getPort = require('get-port'),
   documentation = require('../');
 
 module.exports.command = 'serve [input..]';
@@ -24,7 +24,7 @@ module.exports.builder = _.assign(
   sharedOptions.sharedInputOptions,
   {
     port: {
-      describe: 'port for the local server',
+      describe: 'preferred port for the local server',
       type: 'number',
       default: 4001
     }
@@ -54,46 +54,48 @@ module.exports.handler = function serve(argv: Object) {
     }
   }
 
-  var server = new Server(argv.port);
-  var watcher;
+  getPort(argv.port).then(port => {
+    var server = new Server(port);
+    var watcher;
 
-  server.on('listening', function() {
-    process.stdout.write(`documentation.js serving on port ${argv.port}\n`);
-  });
+    server.on('listening', function() {
+      process.stdout.write(`documentation.js serving on port ${port}\n`);
+    });
 
-  function updateWatcher() {
-    if (!watcher) {
-      watcher = chokidar.watch(argv.input);
-      watcher.on('all', _.debounce(updateServer, 300));
+    function updateWatcher() {
+      if (!watcher) {
+        watcher = chokidar.watch(argv.input);
+        watcher.on('all', _.debounce(updateServer, 300));
+      }
+
+      documentation
+        .expandInputs(argv.input, argv)
+        .then(files => {
+          watcher.add(
+            files.map(data => (typeof data === 'string' ? data : data.file))
+          );
+        })
+        .catch(err => {
+          /* eslint no-console: 0 */
+          return server.setFiles([errorPage(err)]).start();
+        });
     }
 
-    documentation
-      .expandInputs(argv.input, argv)
-      .then(files => {
-        watcher.add(
-          files.map(data => (typeof data === 'string' ? data : data.file))
-        );
-      })
-      .catch(err => {
-        /* eslint no-console: 0 */
-        return server.setFiles([errorPage(err)]).start();
-      });
-  }
+    function updateServer() {
+      documentation
+        .build(argv.input, argv)
+        .then(comments => documentation.formats.html(comments, argv))
+        .then(files => {
+          if (argv.watch) {
+            updateWatcher();
+          }
+          server.setFiles(files).start();
+        })
+        .catch(err => {
+          return server.setFiles([errorPage(err)]).start();
+        });
+    }
 
-  function updateServer() {
-    documentation
-      .build(argv.input, argv)
-      .then(comments => documentation.formats.html(comments, argv))
-      .then(files => {
-        if (argv.watch) {
-          updateWatcher();
-        }
-        server.setFiles(files).start();
-      })
-      .catch(err => {
-        return server.setFiles([errorPage(err)]).start();
-      });
-  }
-
-  updateServer();
+    updateServer();
+  });
 };

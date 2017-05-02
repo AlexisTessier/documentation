@@ -1,8 +1,8 @@
 /*eslint max-len: 0 */
 'use strict';
 
-var _formatType = require('../lib/output/util/format_type'),
-  LinkerStack = require('../lib/output/util/linker_stack'),
+var _formatType = require('../src/output/util/format_type'),
+  LinkerStack = require('../src/output/util/linker_stack'),
   remark = require('remark'),
   parse = require('doctrine-temporary-fork').parse;
 

@@ -119,7 +119,7 @@ describe('readme command', function() {
     return documentation(['readme index.js'], { cwd: d }).catch(err => {
       expect(err).toBeTruthy();
       expect(err.code !== 0).toBeTruthy();
-      t.match(stderr, 'Missing required argument: s');
+      expect(stderr.match(/Missing required argument/)).toBeTruthy();
     });
   });
 

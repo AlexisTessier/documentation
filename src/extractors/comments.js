@@ -1,7 +1,6 @@
 /* @flow */
-'use strict';
-var traverse = require('babel-traverse').default,
-  isJSDocComment = require('../is_jsdoc_comment');
+import traverse from 'babel-traverse';
+var isJSDocComment = require('../is_jsdoc_comment');
 
 /**
  * Iterate through the abstract syntax tree, finding a different kind of comment

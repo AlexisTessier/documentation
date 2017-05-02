@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 var Syntax = require('doctrine-temporary-fork').Syntax,
   u = require('unist-builder');
 

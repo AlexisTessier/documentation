@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var _ = require('lodash'),
@@ -7,8 +6,9 @@ var _ = require('lodash'),
   walkComments = require('../extractors/comments'),
   walkExported = require('../extractors/exported'),
   util = require('util'),
-  debuglog = util.debuglog('documentation'),
-  parseToAst = require('./parse_to_ast');
+  debuglog = util.debuglog('documentation');
+
+import { parseToAst } from './parse_to_ast';
 
 /**
  * Left-pad a string so that it can be sorted lexicographically. We sort

@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 var path = require('path');
 var micromatch = require('micromatch');

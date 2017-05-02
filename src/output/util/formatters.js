@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 var remark = require('remark'),
   html = require('remark-html'),
   Syntax = require('doctrine-temporary-fork').Syntax,

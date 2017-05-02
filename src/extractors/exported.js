@@ -1,12 +1,11 @@
 /* @flow */
-'use strict';
-var traverse = require('babel-traverse').default,
-  isJSDocComment = require('../is_jsdoc_comment'),
-  t = require('babel-types'),
-  nodePath = require('path'),
-  fs = require('fs'),
-  parseToAst = require('../parsers/parse_to_ast'),
-  findTarget = require('../infer/finders').findTarget;
+import traverse from 'babel-traverse';
+var isJSDocComment = require('../is_jsdoc_comment');
+var t = require('babel-types');
+var nodePath = require('path');
+var fs = require('fs');
+import { parseToAst } from '../parsers/parse_to_ast';
+var findTarget = require('../infer/finders').findTarget;
 
 /**
  * Iterate through the abstract syntax tree, finding ES6-style exports,

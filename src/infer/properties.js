@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var flowDoctrine = require('../flow_doctrine'),

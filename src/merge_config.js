@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var yaml = require('js-yaml'),

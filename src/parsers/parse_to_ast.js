@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var babylon = require('babylon');
@@ -24,8 +23,6 @@ var opts = {
   ]
 };
 
-function parseToAst(source: string) {
+export function parseToAst(source: string) {
   return babylon.parse(source, opts);
 }
-
-module.exports = parseToAst;

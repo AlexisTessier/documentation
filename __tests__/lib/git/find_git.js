@@ -1,9 +1,9 @@
 'use strict';
 
-var mock = require('mock-fs'),
-  mockRepo = require('./mock_repo'),
-  path = require('path'),
-  findGit = require('../../../src/git/find_git');
+var mock = require('mock-fs');
+var mockRepo = require('../../utils').mockRepo;
+var path = require('path');
+var findGit = require('../../../src/git/find_git');
 
 test('findGit', function() {
   mock(mockRepo.master);

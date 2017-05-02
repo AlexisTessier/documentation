@@ -2,7 +2,6 @@
 
 // This file triggers https://github.com/prettier/prettier/issues/1151
 
-'use strict';
 var http = require('http'),
   mime = require('mime'),
   pify = require('pify'),
@@ -40,7 +39,7 @@ class Server extends EventEmitter {
     }
     this._port = port;
     this._files = [];
-    this._disableLiveReload = disableLiveReload;
+    this._disableLiveReload = !!disableLiveReload;
   }
 
   /**
@@ -122,18 +121,13 @@ class Server extends EventEmitter {
      * Shut down the server's HTTP & LiveReload endpoints. This method
      * can be called multiple times.
      */
-    return new Promise(resolve => {
-      // idempotent
-      if (!this._lr) {
-        return resolve(this);
-      }
-
-      this._http.close(() => {
-        this._lr.close();
-        delete this._http;
-        delete this._lr;
-        resolve(this);
-      });
+    return Promise.all([
+      this._http && this._http.close(),
+      this._lr && this._lr.close()
+    ]).then(() => {
+      delete this._http;
+      delete this._lr;
+      return this;
     });
   }
 }

@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var getComments = require('get-comments'),

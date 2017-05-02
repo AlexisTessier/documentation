@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var findTarget = require('./finders').findTarget,

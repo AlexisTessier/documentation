@@ -1,5 +1,5 @@
 'use strict';
-var LinkerStack = require('../lib/output/util/linker_stack');
+var LinkerStack = require('../src/output/util/linker_stack');
 
 test('linkerStack', function() {
   var linkerStack = new LinkerStack({});

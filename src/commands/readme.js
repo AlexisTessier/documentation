@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 var fs = require('fs');
 var remark = require('remark');

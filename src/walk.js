@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 /**
  * Apply a function to all comments within a hierarchy: this iterates
@@ -10,7 +9,7 @@
  * @param {Object} [options] options passed through to walker function
  * @returns {Array<Object>} comments
  */
-function walk(comments: Array<Comment>, fn: Function, options: ?Object) {
+export function walk(comments: Array<Comment>, fn: Function, options: ?Object) {
   comments.forEach(comment => {
     fn(comment, options);
     for (var scope in comment.members) {
@@ -19,5 +18,3 @@ function walk(comments: Array<Comment>, fn: Function, options: ?Object) {
   });
   return comments;
 }
-
-module.exports = walk;

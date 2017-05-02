@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var mdeps = require('module-deps-sortable');

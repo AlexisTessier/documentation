@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var t = require('babel-types');

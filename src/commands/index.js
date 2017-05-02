@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 /*
  * Maps command name to a command plugin module.  Each command plugin module

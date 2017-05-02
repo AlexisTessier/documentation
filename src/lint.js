@@ -1,10 +1,9 @@
-'use strict';
 /* @flow */
 
-var VFile = require('vfile'),
-  walk = require('./walk'),
-  vfileSort = require('vfile-sort'),
-  reporter = require('vfile-reporter');
+var VFile = require('vfile');
+import { walk } from './walk';
+import vfileSort from 'vfile-sort';
+import reporter from 'vfile-reporter';
 
 var CANONICAL = {
   String: 'string',

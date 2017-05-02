@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var smartGlob = require('../smart_glob.js');

@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 var documentation = require('../');
 var fs = require('fs');

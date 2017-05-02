@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var doctrine = require('doctrine-temporary-fork');

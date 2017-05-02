@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 /**
  * Create a tokenizer method for Remark, our Markdown processor,

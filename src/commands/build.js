@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 var streamArray = require('stream-array'),
   sharedOptions = require('./shared_options'),

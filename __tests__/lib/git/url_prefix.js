@@ -1,9 +1,9 @@
 'use strict';
 
-var mock = require('mock-fs'),
-  mockRepo = require('./mock_repo'),
-  getGithubURLPrefix = require('../../../src/git/url_prefix'),
-  parsePackedRefs = getGithubURLPrefix.parsePackedRefs;
+var mock = require('mock-fs');
+var mockRepo = require('../../utils').mockRepo;
+var getGithubURLPrefix = require('../../../src/git/url_prefix');
+var parsePackedRefs = getGithubURLPrefix.parsePackedRefs;
 
 test('getGithubURLPrefix', function() {
   mock(mockRepo.master);

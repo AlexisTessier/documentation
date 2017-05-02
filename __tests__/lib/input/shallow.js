@@ -16,7 +16,7 @@ test('shallow deps multi', function() {
   return shallow(
     [
       path.resolve(path.join(__dirname, '../../fixture/es6.input.js')),
-      path.resolve(path.join(__dirname, '../../fixture/es6.output.json'))
+      path.resolve(path.join(__dirname, '../../fixture/simple.input.js'))
     ],
     {}
   ).then(deps => {

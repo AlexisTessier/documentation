@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var remark = require('remark'), markdownAST = require('./markdown_ast');

@@ -1,7 +1,6 @@
-'use strict';
 /* @flow */
 
-var walk = require('./walk');
+import { walk } from './walk';
 
 /**
  * Exclude given access levels from the generated documentation: this allows

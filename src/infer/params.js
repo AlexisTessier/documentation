@@ -1,11 +1,10 @@
-'use strict';
 /* @flow */
 
-const t = require('babel-types');
-const generate = require('babel-generator').default;
-const _ = require('lodash');
-const findTarget = require('./finders').findTarget;
-const flowDoctrine = require('../flow_doctrine');
+import * as t from 'babel-types';
+import generate from 'babel-generator';
+import _ from 'lodash';
+import finders from './finders';
+import flowDoctrine from '../flow_doctrine';
 
 /**
  * Infers param tags by reading function parameter names
@@ -14,7 +13,7 @@ const flowDoctrine = require('../flow_doctrine');
  * @returns {Object} comment with parameters
  */
 function inferParams(comment: Comment) {
-  var path = findTarget(comment.context.ast);
+  var path = finders.findTarget(comment.context.ast);
 
   // In case of `/** */ var x = function () {}` findTarget returns
   // the declarator.

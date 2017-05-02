@@ -1,7 +1,6 @@
-'use strict';
 /* @flow */
 
-var walk = require('../walk');
+import { walk } from '../walk';
 
 /**
  * Formats documentation as a JSON string.

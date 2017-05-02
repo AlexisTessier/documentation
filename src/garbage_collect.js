@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 function garbageCollect(comment: Comment) {
   delete comment.context.code;
   delete comment.context.ast;

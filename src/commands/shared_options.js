@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 /**
  * Adds shared options to any command that runs documentation

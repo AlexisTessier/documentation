@@ -25,6 +25,7 @@
     "disparity": "^2.0.0",
     "doctrine-temporary-fork": "2.0.0-alpha-allowarrayindex",
     "get-comments": "^1.0.1",
+    "get-port": "^3.1.0",
     "git-url-parse": "^6.0.1",
     "github-slugger": "1.1.1",
     "glob": "^7.0.0",
@@ -58,9 +59,13 @@
   },
   "devDependencies": {
     "are-we-flow-yet": "^1.0.0",
+    "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "chdir": "0.0.0",
+    "coveralls": "^2.13.1",
     "cz-conventional-changelog": "2.0.0",
     "documentation-schema": "0.0.1",
     "eslint": "^3.19.0",
@@ -68,12 +73,12 @@
     "eslint-plugin-flowtype": "^2.32.1",
     "flow-bin": "^0.45.0",
     "fs-extra": "^3.0.0",
-    "get-port": "^3.1.0",
     "husky": "^0.13.3",
     "jest": "^19.0.2",
     "json-schema": "0.2.3",
     "lint-staged": "^3.4.0",
     "mock-fs": "^4.2.0",
+    "p-event": "^1.0.0",
     "prettier": "^1.0.0",
     "standard-version": "^4.0.0",
     "tmp": "^0.0.31"
@@ -99,14 +104,21 @@
     "format": "prettier --write '{src,__tests__,declarations,bin,default_theme}/**/*.js' --single-quote",
     "doc": "./bin/documentation.js build lib/index.js -f md --access=public > docs/NODE_API.md",
     "changelog": "standard-changelog -i CHANGELOG.md -w",
-    "self-lint": "node ./bin/documentation.js lint",
-    "test": "eslint src && are-we-flow-yet src && flow check && npm run self-lint && jest --runInBand"
+    "self-lint": "node ./bin/documentation.js lint src",
+    "test": "npm run build && eslint src && are-we-flow-yet src && flow check && jest",
+    "test-ci": "npm run build && eslint src && are-we-flow-yet src && flow check && jest --runInBand && coveralls < coverage/lcov.info"
   },
   "jest": {
     "testPathIgnorePatterns": [
       "/node_modules/",
+      "utils.js",
       "fixture"
-    ]
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/lib/"
+    ],
+    "collectCoverage": true,
+    "testEnvironment": "node"
   },
   "config": {
     "commitizen": {

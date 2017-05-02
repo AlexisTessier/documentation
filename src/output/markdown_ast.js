@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 
 var u = require('unist-builder'),
   remark = require('remark'),

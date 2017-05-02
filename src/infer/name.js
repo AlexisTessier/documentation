@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var pathParse = require('parse-filepath'), t = require('babel-types');

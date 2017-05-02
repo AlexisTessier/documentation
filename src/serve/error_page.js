@@ -1,6 +1,5 @@
 /* @flow */
 /* eslint no-console: 0 */
-'use strict';
 var File = require('vinyl');
 var ansiHTML = require('ansi-html');
 

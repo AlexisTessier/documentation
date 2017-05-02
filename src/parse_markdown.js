@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 var remark = require('remark');
 var inlineTokenizer = require('./inline_tokenizer');
 

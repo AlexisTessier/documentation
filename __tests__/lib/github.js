@@ -4,7 +4,7 @@
 
 var mock = require('mock-fs'),
   path = require('path'),
-  mockRepo = require('./git/mock_repo'),
+  mockRepo = require('../utils').mockRepo,
   parse = require('../../src/parsers/javascript'),
   github = require('../../src/github');
 

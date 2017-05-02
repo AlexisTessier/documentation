@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 var parseMarkdown = require('./parse_markdown');

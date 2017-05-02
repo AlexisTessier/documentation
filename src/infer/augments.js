@@ -1,8 +1,7 @@
-'use strict';
 /* @flow */
 
-var generate = require('babel-generator').default,
-  findTarget = require('./finders').findTarget;
+import generate from 'babel-generator';
+var findTarget = require('./finders').findTarget;
 
 /**
  * Infers an `augments` tag from an ES6 class declaration

@@ -1,7 +1,6 @@
 /* @flow */
-'use strict';
 var globalsDocs = require('globals-docs');
-var walk = require('../../walk');
+import { walk } from '../../walk';
 
 /**
  * Generate a linker method that links given hardcoded namepaths to URLs

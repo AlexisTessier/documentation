@@ -1,4 +1,3 @@
-'use strict';
 /* @flow */
 
 const generate = require('babel-generator').default;

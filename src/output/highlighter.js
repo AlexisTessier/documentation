@@ -1,5 +1,4 @@
 /* @flow */
-'use strict';
 var visit = require('unist-util-visit');
 var hljs = require('highlight.js');
 
