@@ -47,7 +47,7 @@ module.exports = function(
         if (section.kind === 'class') {
           prefix = 'new ';
         } else if (section.kind !== 'function') {
-          return section.name;
+          return null;
         }
         if (section.returns.length) {
           returns = ': ' + formatters.type(section.returns[0].type);
