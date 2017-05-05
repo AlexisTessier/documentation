@@ -16,8 +16,10 @@
   <% } %>
 
   <%= md(section.description) %>
-
+  
+  <% if (signature(section)) { %>
   <div class='pre p1 fill-light mt0'><%= signature(section) %></div>
+  <% } %>
   <% if (section.type) { %>
     <p>
       Type:
